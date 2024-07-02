@@ -1,0 +1,28 @@
+let gallery = ["https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/69/6c/70/696c70f5-d90e-dd30-2a98-3e03b345eabb/21UMGIM32953.rgb.jpg/600x600bf-60.jpg", 
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDGKqxW0xVVAg7hRmiDz4Jv7EbnpWVGXTGXw&s",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIlP04xSL8jM_wpv0h4gPkP2CMUyUVcUfeZw&s"
+];
+
+let leyenda = ["Ser Humano", "Unidos Permanecemos", "Infinito"];
+
+let texto = document.querySelector(".leyenda");
+let galeria = document.querySelector(".gallery");
+let boton = document.querySelector('.add');
+for (cont of leyenda){
+    let text = document.createElement("h3")
+    text.textContent= cont;
+    texto.append(text);
+}
+    for (cont of gallery){
+    let picture = document.createElement("img");
+    picture.src = cont;
+    galeria.append(picture);
+    }
+boton.addEventListener('click', function(){
+    let imglink = document.querySelector(".picture-url");
+    gallery.push(imglink.value);
+    let picture = document.createElement("img");
+    picture.src = (imglink.value);
+    galeria.append(picture); 
+});
+
